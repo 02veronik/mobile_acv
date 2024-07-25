@@ -3,40 +3,407 @@ import flet as ft
 
 def main(page: ft.Page):
 
+    # Formulario 01
     def form_objetive_1(page):
         page.controls.clear()
-        page.controls.append(ft.Column([
-            ft.Text("Formulario de Paciente", style=ft.TextStyle(size=20, weight="bold")),
-            ft.TextField(label="Nombre"),
-            ft.TextField(label="Apellido"),
-            ft.ElevatedButton(text="Guardar", on_click=save_form),
-            ft.ElevatedButton(text="Regresar", on_click=show_main_screen)
-        ], spacing=10, alignment="center"))
+        page.controls.append(
+            ft.Column(
+                controls=[
+                    ft.Text("Formulario de Predicción", style=ft.TextStyle(size=20, weight="bold")),
+                    
+                    # Género
+                    ft.Row([
+                        ft.Text("Género"),
+                        ft.Dropdown(
+                            options=[
+                                ft.dropdown.Option("", "Seleccionar opción"),
+                                ft.dropdown.Option("0", "Femenino"),
+                                ft.dropdown.Option("1", "Masculino")
+                            ]
+                           # value="",  # Valor por defecto
+                          #  required=True
+                        )
+                    ], alignment="center"),
+                    
+                    # Edad
+                    ft.Row([
+                        ft.Text("Edad"),
+                        ft.TextField(
+                            label="Edad",
+                            keyboard_type="number"
+                            #required=True
+                        )
+                    ], alignment="center"),
+
+                    # Tipo de Trabajo
+                    ft.Row([
+                        ft.Text("Tipo de Trabajo"),
+                        ft.Dropdown(
+                            options=[
+                                ft.dropdown.Option("", "Seleccionar opción"),
+                                ft.dropdown.Option("1", "Trabajador por cuenta propia"),
+                                ft.dropdown.Option("2", "Trabajador para el gobierno"),
+                                ft.dropdown.Option("3", "Nunca trabajó"),
+                                ft.dropdown.Option("4", "Trabajador privado")
+                            ],
+                            value=""  # Valor por defecto
+                           # required=True
+                        )
+                    ], alignment="center"),
+                    
+                    # Hipertensión
+                    ft.Row([
+                        ft.Text("Hipertensión"),
+                        ft.Dropdown(
+                            options=[
+                                ft.dropdown.Option("", "Seleccionar opción"),
+                                ft.dropdown.Option("0", "No"),
+                                ft.dropdown.Option("1", "Sí")
+                            ],
+                            value=""  # Valor por defecto
+                            #required=True
+                        )
+                    ], alignment="center"),
+                    
+                    # Cardiopatía
+                    ft.Row([
+                        ft.Text("Cardiopatía"),
+                        ft.Dropdown(
+                            options=[
+                                ft.dropdown.Option("", "Seleccionar opción"),
+                                ft.dropdown.Option("0", "No"),
+                                ft.dropdown.Option("1", "Sí")
+                            ],
+                            value=""  # Valor por defecto
+                            #required=True
+                        )
+                    ], alignment="center"),
+                    
+                    # Nivel de Glucosa Promedio
+                    ft.Row([
+                        ft.Text("Nivel de Glucosa Promedio"),
+                        ft.TextField(
+                            label="Nivel de Glucosa Promedio",
+                            keyboard_type="number"
+                            #required=True
+                        )
+                    ], alignment="center"),
+                    
+                    # ICM
+                    ft.Row([
+                        ft.Text("ICM"),
+                        ft.TextField(
+                            label="ICM",
+                            keyboard_type="number"
+                            #required=True
+                        )
+                    ], alignment="center"),
+                    
+                    # Estado de Fumador
+                    ft.Row([
+                        ft.Text("Estado de Fumador"),
+                        ft.Dropdown(
+                            options=[
+                                ft.dropdown.Option("", "Seleccionar opción"),
+                                ft.dropdown.Option("1", "Anteriormente fumó"),
+                                ft.dropdown.Option("2", "Nunca fumó"),
+                                ft.dropdown.Option("3", "Fuma")
+                            ],
+                            value=""  # Valor por defecto
+                            #required=True
+                        )
+                    ], alignment="center"),
+                    
+                    # Botones
+                    ft.Row([
+                        ft.ElevatedButton(text="Guardar", on_click=save_form),
+                        ft.ElevatedButton(text="Regresar", on_click=show_main_screen)
+                    ], spacing=10, alignment="center")
+                ],
+                spacing=10,
+                alignment="center"
+            )
+        )
         page.update()
+
 
     def form_objetive_2(page):
         page.controls.clear()
-        page.controls.append(ft.Column([
-            ft.Text("Otro Formulario", style=ft.TextStyle(size=20, weight="bold")),
-            ft.TextField(label="Nombre 2"),
-            ft.TextField(label="Apellido 2"),
-            ft.ElevatedButton(text="Guardar", on_click=save_form),
-            ft.ElevatedButton(text="Regresar", on_click=show_main_screen)
-        ], spacing=10, alignment="center"))
+        page.controls.append(
+            ft.Column(
+                controls=[
+                    ft.Text("Formulario de Predicción", style=ft.TextStyle(size=20, weight="bold")),
+                    
+                    # Género
+                    ft.Row([
+                        ft.Text("Género"),
+                        ft.Dropdown(
+                            options=[
+                                ft.dropdown.Option("", "Seleccionar opción"),
+                                ft.dropdown.Option("0", "Femenino"),
+                                ft.dropdown.Option("1", "Masculino")
+                            ]
+                           # value="",  # Valor por defecto
+                          #  required=True
+                        )
+                    ], alignment="center"),
+                    
+                    # Edad
+                    ft.Row([
+                        ft.Text("Edad"),
+                        ft.TextField(
+                            label="Edad",
+                            keyboard_type="number"
+                            #required=True
+                        )
+                    ], alignment="center"),
+
+                    # Tipo de Trabajo
+                    ft.Row([
+                        ft.Text("Tipo de Trabajo"),
+                        ft.Dropdown(
+                            options=[
+                                ft.dropdown.Option("", "Seleccionar opción"),
+                                ft.dropdown.Option("1", "Trabajador por cuenta propia"),
+                                ft.dropdown.Option("2", "Trabajador para el gobierno"),
+                                ft.dropdown.Option("3", "Nunca trabajó"),
+                                ft.dropdown.Option("4", "Trabajador privado")
+                            ],
+                            value=""  # Valor por defecto
+                           # required=True
+                        )
+                    ], alignment="center"),
+                    
+                    # Hipertensión
+                    ft.Row([
+                        ft.Text("Hipertensión"),
+                        ft.Dropdown(
+                            options=[
+                                ft.dropdown.Option("", "Seleccionar opción"),
+                                ft.dropdown.Option("0", "No"),
+                                ft.dropdown.Option("1", "Sí")
+                            ],
+                            value=""  # Valor por defecto
+                            #required=True
+                        )
+                    ], alignment="center"),
+                    
+                    # Cardiopatía
+                    ft.Row([
+                        ft.Text("Cardiopatía"),
+                        ft.Dropdown(
+                            options=[
+                                ft.dropdown.Option("", "Seleccionar opción"),
+                                ft.dropdown.Option("0", "No"),
+                                ft.dropdown.Option("1", "Sí")
+                            ],
+                            value=""  # Valor por defecto
+                            #required=True
+                        )
+                    ], alignment="center"),
+                    
+                    # Nivel de Glucosa Promedio
+                    ft.Row([
+                        ft.Text("Nivel de Glucosa Promedio"),
+                        ft.TextField(
+                            label="Nivel de Glucosa Promedio",
+                            keyboard_type="number"
+                            #required=True
+                        )
+                    ], alignment="center"),
+                    
+                    # ICM
+                    ft.Row([
+                        ft.Text("ICM"),
+                        ft.TextField(
+                            label="ICM",
+                            keyboard_type="number"
+                            #required=True
+                        )
+                    ], alignment="center"),
+                     
+                    
+                    # Botones
+                    ft.Row([
+                        ft.ElevatedButton(text="Guardar", on_click=save_form),
+                        ft.ElevatedButton(text="Regresar", on_click=show_main_screen)
+                    ], spacing=10, alignment="center")
+                ],
+                spacing=10,
+                alignment="center"
+            )
+        )
         page.update()
 
+#--------------INICIO FORMULARIO PARA PREDICCIÓN 3     
+    def save_form(e):
+        # Validar el formulario
+        gender_value = gender_select.value
+        age_value = age_input.value
         
+        if gender_value not in ["0", "1"]:
+            error_message.text = "Se requiere seleccionar una opción."
+            page.update()
+            return
+
+        try:
+            age = int(age_value)
+            if age <= 0:
+                error_message.text = "La edad debe ser un número positivo."
+                page.update()
+                return
+        except ValueError:
+            error_message.text = "Valor de edad incorrecto. Debe ser un número positivo."
+            page.update()
+            return
+
+        # Aquí podrías agregar la lógica para guardar los datos del formulario
+        print("Formulario guardado exitosamente")
+        show_main_screen(e)  # Volver a la pantalla principal después de guardar
+    
+
+
+
+
+
+
+
     def form_objetive_3(page):
         page.controls.clear()
-        page.controls.append(ft.Column([
-            ft.Text("Otro Formulario", style=ft.TextStyle(size=20, weight="bold")),
-            ft.TextField(label="Campo 1"),
-            ft.TextField(label="Campo 2"),
-            ft.ElevatedButton(text="Guardar", on_click=save_form),
-            ft.ElevatedButton(text="Regresar", on_click=show_main_screen)
-        ], spacing=10, alignment="center"))
+        page.controls.append(
+            ft.Column(
+                controls=[
+                    ft.Text("Formulario de Predicción", style=ft.TextStyle(size=20, weight="bold")),
+                    
+                    # Estado de Fumador
+                    ft.Row([
+                        ft.Text("Estado de Fumador"),
+                        ft.Dropdown(
+                            options=[
+                                ft.dropdown.Option("", "Seleccionar opción"),
+                                ft.dropdown.Option("0", "No"),
+                                ft.dropdown.Option("1", "Si"), 
+                            ],
+                            value=""  # Valor por defecto
+                            #required=True
+                        )
+                    ], alignment="center"),
+                    
+                    # Bebedor frecuente
+                    ft.Row([
+                        ft.Text("Bebedor frecuente"),
+                        ft.Dropdown(
+                            options=[
+                                ft.dropdown.Option("", "Seleccionar opción"),
+                                ft.dropdown.Option("0", "No"),
+                                ft.dropdown.Option("1", "Si"), 
+                            ],
+                            value=""  # Valor por defecto
+                            #required=True
+                        )
+                    ], alignment="center"),
+                    
+                    # Actividad Física
+                    ft.Row([
+                        ft.Text("Actividad Física"),
+                        ft.Dropdown(
+                            options=[
+                                ft.dropdown.Option("", "Seleccionar opción"),
+                                ft.dropdown.Option("0", "No"),
+                                ft.dropdown.Option("1", "Si"), 
+                            ],
+                            value=""  # Valor por defecto
+                            #required=True
+                        )
+                    ], alignment="center"),
+                    
+                    # Nivel de Glucosa Promedio
+                    ft.Row([
+                        ft.Text("Nivel de Glucosa Promedio"),
+                        ft.TextField(
+                            label="Nivel de Glucosa Promedio",
+                            keyboard_type="number"
+                            #required=True
+                        )
+                    ], alignment="center"),
+                    
+                    # Género
+                    ft.Row([
+                        ft.Text("Género"),
+                        ft.Dropdown(
+                            options=[
+                                ft.dropdown.Option("", "Seleccionar opción"),
+                                ft.dropdown.Option("0", "Femenino"),
+                                ft.dropdown.Option("1", "Masculino")
+                            ]
+                           # value="",  # Valor por defecto
+                          #  required=True
+                        )
+                    ], alignment="center"),
+                    
+                    # Edad
+                    ft.Row([
+                        ft.Text("Edad"),
+                        ft.TextField(
+                            label="Edad",
+                            keyboard_type="number"
+                            #required=True
+                        )
+                    ], alignment="center"),
+
+                    # Etnia
+                    ft.Row([
+                        ft.Text("Etnia"),
+                        ft.Dropdown(
+                            options=[
+                                ft.dropdown.Option("", "Seleccionar opción"),
+                                ft.dropdown.Option("0", "Indígena"),
+                                ft.dropdown.Option("1", "Asiático"),
+                                ft.dropdown.Option("2", "Negro"),
+                                ft.dropdown.Option("3", "Hispano"),
+                                ft.dropdown.Option("4", "Blanco"),
+                                ft.dropdown.Option("4", "Otro"),
+                                
+                            ],
+                            value=""  # Valor por defecto
+                           # required=True
+                        )
+                    ], alignment="center"),
+                     
+                    
+                    
+                    # ICM
+                    ft.Row([
+                        ft.Text("ICM"),
+                        ft.TextField(
+                            label="ICM",
+                            keyboard_type="number"
+                            #required=True
+                        )
+                    ], alignment="center"),
+                    
+                    
+                    
+                    # Botones
+                    ft.Row([
+                        ft.ElevatedButton(text="Guardar", on_click=save_form),
+                        ft.ElevatedButton(text="Regresar", on_click=show_main_screen)
+                    ], spacing=10, alignment="center")
+                ],
+                spacing=10,
+                alignment="center"
+            )
+        )
         page.update()
+
+
     
+
+
+
+
+
+#---------------FIN FORMULARIO PARA PREDICCIÓN 3 
     def show_form(form_id, e):
         if form_id == "form_1":
             form_objetive_1(page)
