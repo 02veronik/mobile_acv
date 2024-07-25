@@ -12,7 +12,7 @@ def main(page: ft.Page):
                     ft.Text("Formulario de Predicción", style=ft.TextStyle(size=20, weight="bold")),
                     
                     # Género
-                    ft.Row([
+                    ft.Column([
                         ft.Text("Género"),
                         ft.Dropdown(
                             options=[
@@ -317,13 +317,38 @@ def main(page: ft.Page):
                         )
                     ], alignment="center"),
                     
-                    # Nivel de Glucosa Promedio
+                    # Horas dormidas
                     ft.Row([
-                        ft.Text("Nivel de Glucosa Promedio"),
+                        ft.Text("Horas dormidas"),
                         ft.TextField(
-                            label="Nivel de Glucosa Promedio",
+                            label="Horas dormidas",
                             keyboard_type="number"
                             #required=True
+                        )
+                    ], alignment="center"),
+                    
+                    # Edad
+                    ft.Row([
+                        ft.Text("Rango de Edad"),
+                        ft.Dropdown(
+                            options=[
+                                ft.dropdown.Option("", "Seleccionar opción"),
+                                ft.dropdown.Option("0", "18-24"),
+                                ft.dropdown.Option("1", "25-29"),
+                                ft.dropdown.Option("2", "30-34"),
+                                ft.dropdown.Option("3", "35-39"),
+                                ft.dropdown.Option("4", "40-44"),
+                                ft.dropdown.Option("5", "45-49"),
+                                ft.dropdown.Option("6", "50-54"),
+                                ft.dropdown.Option("7", "55-59"),
+                                ft.dropdown.Option("8", "60-64"),
+                                ft.dropdown.Option("9", "65-69"),
+                                ft.dropdown.Option("10", "70-74"),
+                                ft.dropdown.Option("11", "75-79"),
+                                ft.dropdown.Option("12", "80 a más"),
+                            ],
+                            value=""  # Valor por defecto
+                           # required=True
                         )
                     ], alignment="center"),
                     
@@ -338,16 +363,6 @@ def main(page: ft.Page):
                             ]
                            # value="",  # Valor por defecto
                           #  required=True
-                        )
-                    ], alignment="center"),
-                    
-                    # Edad
-                    ft.Row([
-                        ft.Text("Edad"),
-                        ft.TextField(
-                            label="Edad",
-                            keyboard_type="number"
-                            #required=True
                         )
                     ], alignment="center"),
 
@@ -370,19 +385,7 @@ def main(page: ft.Page):
                         )
                     ], alignment="center"),
                      
-                    
-                    
-                    # ICM
-                    ft.Row([
-                        ft.Text("ICM"),
-                        ft.TextField(
-                            label="ICM",
-                            keyboard_type="number"
-                            #required=True
-                        )
-                    ], alignment="center"),
-                    
-                    
+                     
                     
                     # Botones
                     ft.Row([
@@ -474,6 +477,8 @@ def main(page: ft.Page):
 
 
     page.add(ft.Column(cards, alignment="center", horizontal_alignment="center", spacing=20))
+    page.window_width = 360  # Ancho específico para la vista móvil
+    page.window_height = 640  # Altura específica para la vista móvil
     page.update()
 
 ft.app(target=main)
