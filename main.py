@@ -44,7 +44,7 @@ def main(page: ft.Page):
             padding=20,
             border_radius=15,
             # shadow=ft.BoxShadow(
-            #     offset=ft.Offset(2, 2),
+            #     offset=ft.Offset(2, 2),   
             #     blur_radius=10,
             #     spread_radius=1,
             #     color=ft.colors.GREY_500
